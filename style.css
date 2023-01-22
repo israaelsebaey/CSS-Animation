@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Righteous&family=Rubik+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url('./images/18.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container {
+    overflow: hidden;
+}
+.container .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.653);
+    z-index: -1;
+}
+.container .title,
+.container .start-end
+{
+    color: #fff;
+    /* border: 1px solid #fff; */
+    text-align: center;
+    padding: 15px;
+    width: 400px;
+    margin: auto;
+}
+.container .title h1{
+    font-size: 60px;
+    background-image: url('./images/29.jpg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0 20px #ff00595b;
+    font-family: 'Lobster', cursive;
+    color: transparent;
+    -webkit-background-clip:text;
+    background-clip:text;
+    animation: myText 20s linear infinite;               
+}
+@keyframes myText{
+   0%{
+    background-position: left 0 top 10px;
+   }
+   100%{
+    background-position: left 800px top 10px;
+   }
+}
+.container .start-end{
+    position: relative;
+}
+.container .start-end h2{
+    font-family: 'Seymour One', sans-serif;
+    text-transform:uppercase;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation-name: start-end;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    text-shadow: 3px 3px 3px #000;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.347),2px 2px 1px rgba(255, 255, 255, 0.347); 
+}
+.container .start-end .start{   
+    animation-delay: 2s;
+}
+.container .start-end .end{
+    animation-delay: 35s;   
+}
+@keyframes start-end {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.container{
+    overflow: auto;
+}
+.container .left-balls,
+.container .right-balls
+{
+    width: 200px;
+    height: 600px;
+    position: relative;
+    float: left;
+}
+.container .right-balls{
+    float: right;
+}
+.container .left-balls .ball,
+.container .right-balls .ball
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(#14ffe9,#ffeb3b,#ff00e0);
+    position: relative;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.container .left-balls .ball::after,
+.container .right-balls .ball::after
+{
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    background-color: #ff5490;
+}
+.container .right-balls .ball::after{
+    background-color: #b536a6;
+}
+.container .left-balls .ball span,
+.container .right-balls .ball span
+{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+   background:linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+}
+.container .right-balls .ball span{
+    background:linear-gradient(#fb2488,#ff9743,#7f62f3);
+}
+.container .left-balls .ball span:nth-child(1),
+.container .right-balls .ball span:nth-child(1)
+{
+    filter: blur(5px);
+}
+.container .left-balls .ball span:nth-child(2),
+.container .right-balls .ball span:nth-child(2)
+{
+    filter: blur(10px);
+}
+.container .left-balls .ball span:nth-child(3),
+.container .right-balls .ball span:nth-child(3)
+{
+    filter: blur(25px);
+}
+.container .left-balls .ball span:nth-child(4),
+.container .right-balls .ball span:nth-child(4)
+{
+    filter: blur(50px);
+}
+.container .left-balls .ball1{
+    animation-name: left-balls;
+    animation-delay: 5s;
+    top:50px;  
+    left: 50px;  
+}
+.container .left-balls .ball2{
+    animation-name: left-balls;
+    animation-delay: 15s;
+    top: 170px;
+    left: 50px;
+}
+.container .left-balls .ball3{
+    animation-name: left-balls;
+    animation-delay: 25s;
+    top: 290px;
+    left: 50px;
+}
+.container .right-balls .ball4{
+    animation-name: right-balls ;
+    animation-delay: 10s;
+    top: 140px;
+    right: -85px;
+}
+.container .right-balls .ball5{
+    animation-name: right-balls ;
+    animation-delay: 20s;
+    top: 260px;
+    right: -85px;
+}
+.container .right-balls .ball6{
+    animation-name: right-balls ;
+    animation-delay: 30s;
+    top: 380px;
+    right: -85px;
+}
+@keyframes left-balls {
+    0%{
+        transform:scale(1) translateX(0) rotate(-360deg);
+    }
+    50%{
+        transform:scale(1.5);
+    }
+    100%{
+        transform:scale(1) translateX(1370px) rotate(360deg); 
+    }
+}
+@keyframes right-balls {
+    0%{
+        transform:scale(1) translateX(0) rotate(-360deg);
+    }
+    50%{
+        transform:scale(1.7);
+    }
+    100%{
+        transform:scale(1) translateX(-1370px) rotate(360deg);        
+    }
+}
+/* =======box style=================== */
+.box div{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+}
+.box div:nth-child(odd){
+    box-shadow:0 0 0 10px #4fc3dc44,0 0 50px  #4fc3dc,0 0 100px  #4fc3dc;
+}
+.box div:nth-child(even){
+    box-shadow:0 0 0 10px #ff2d7544,0 0 50px  #ff2d75,0 0 100px  #ff2d75;
+}
+.box div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;    
+}
+.box div:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: animate 7s linear infinite;
+}
+.box div:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(4){
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(5){
+    top: 67%;
+    left: 10%;
+    animation: animate 6s linear infinite;
+}
+.box div:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
+}
+.box div:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+}
+.box div:nth-child(8){
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+}
+.box div:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+}
+.box div:nth-child(10){
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}
